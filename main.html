@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<head>
+    <title>Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        Student Registration Form
+    </header>
+    <main>
+        <div class="container" id="form1">
+            <div class="form-header">
+                <h1>Registration</h1>
+            </div>
+            
+            <form>
+                <h3>Personal Details</h3>
+                <div class="form-control">
+                    <label for="fname">First Name</label>
+                    <input type="text" name="fname" id="fname" placeholder="First name">
+                    <span class="validator"></span>
+                </div>
+                <div class="form-control">
+                    <label for="mname">Middle Name</label>
+                    <input type="text" name="mname" id="mname" placeholder="Middle name">
+                    <span class="validator"></span>
+                </div>
+                <div class="form-control">
+                    <label for="lname">Last Name</label>
+                    <input type="text" name="lname" id="lname" placeholder="Last name">
+                    <span class="validator"></span>
+                </div>
+                <div class="form-control">
+                    <label for="gender">Gender</label>
+                    <div class="gender-options">
+                        <label for="female"><input type="radio" name="gender" id="female" onclick="(getgender(this.value))" value="Female">Female</label>
+                        <label for="male"><input type="radio" name="gender" id="male" onclick="(getgender(this.value))" value="Male">Male</label>
+                        <label for="others"><input type="radio" name="gender" id="others" onclick="(getgender(this.value))" value="Others">Others</label>
+                    </div>
+                </div>  
+                <div class="form-control">
+                    <label for="interest">Interest</label>
+                    <div class="interest-options">
+                        <label for="foods"><input type="checkbox" name="interest" id="Foods">Foods</label>
+                        <label for="studies"><input type="checkbox" name="interest" id="Studies">Studies</label>
+                        <label for="games"><input type="checkbox" name="interest" id="Games">Games</label>
+                        <label for="vices"><input type="checkbox" name="interest" id="Vices">Vices</label>
+                    </div>
+                </div>  
+                <h3>Student Details</h3>
+                <div class="form-control">
+                    <label for="sn">Student Number</label>
+                    <input type="text" name="sn" id="sn" placeholder="Student Number">
+                    <span class="validator"></span>
+                </div>
+                <div class="form-control">
+                    <label for="stype">Student Type</label>
+                    <div class="stype-options">
+                        <label for="scholar"><input type="radio" name="stype" id="scholar" onclick="(getstudenttype(this.value))" value="Scholar">Scholar</label>
+                        <label for="nonscholar"><input type="radio" name="stype" id="nonscholar" onclick="(getstudenttype(this.value))" value="Non-Scholar">Non-Scholar</label>
+                    </div>
+                </div> 
+                <div class="form-control">
+                    <label for="course">Course: </label>
+                    <select name="course" id="course">
+                        <option value="BSIT">BSIT</option>
+                        <option value="BSCS">BSCS</option>
+                        <option value="BSIS">BSIS</option>
+                        <option value="BSCE">BSCE</option>
+                    </select>
+                    <span class="validator"></span>
+                </div>
+                <div class="form-control">
+                    <label for="section">Comment Section: </label>
+                    <textarea rows="4" cols="61" name="section" form="section" placeholder="Enter section here..."></textarea>
+                    <span class="validator"></span>
+                </div>
+                <h3>Account Details</h3>
+                <div class="form-control">
+                    <label for="uname">Username</label>
+                    <input type="text" name="uname" id="uname" placeholder="Username">
+                    <span class="validator"></span>
+                </div>
+                <div class="form-control">
+                    <label for="pass">Password</label>
+                    <input type="password" name="pass" id="pass" placeholder="Password">
+                    <span class="validator"></span>
+                </div>
+                <div class="form-control">
+                    <label for="cpass">Confirm Password</label>
+                    <input type="password" name="cpass" id="cpass" placeholder="Confirm Password">
+                    <span class="validator"></span>
+                </div>
+            </form>
+            <button class="btn clear" id="clear" onclick="clearForm()">Clear</button>
+            <button class="btn submit" id="submit" onclick="submitForm()">Submit</button>
+        </div>
+        <div class="container" id="form2">
+                <form>
+                    <div class="form-header">
+                        <h1>Registration Complete</h1>
+                        <div class="form-control">
+                            <h3>Personal Details</h3>
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" readonly>
+                            <label for="gender">Gender</label>
+                            <input type="text" name="gender" id="gender" readonly>
+                            <label for="interest">Interest</label>
+                            <input type="text" name="interest" id="interest" readonly>
+                            <h3>Student Account Details</h3>
+                            <label for="uname2">Username</label>
+                            <input type="text" name="uname2" id="uname2" readonly>
+                            <label for="sn2">Student Number</label>
+                            <input type="text" name="sn2" id="sn2" readonly>
+                            <label for="stype">Student Type</label>
+                            <input type="text" name="stype" id="stype" readonly>
+                            <label for="course">Course</label>
+                            <input type="text" name="course" id="course2" readonly>
+                            <label for="section">Section</label>
+                            <textarea rows="4" cols="61" name="section" id="section" readonly></textarea>
+                            
+                        </div>
+                    </div>
+                </form>    
+            <button class="btn cancel" id="cancel" onclick="cancelForm()">Go Back</button>
+        </div>
+        
+    </main>
+    
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
